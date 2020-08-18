@@ -1,0 +1,40 @@
+.result {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px black solid;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    height: 8rem;
+
+    img {
+        height: 100%;
+        width: auto;
+    }
+}
+
+
+.desc {
+    padding-left: 2rem;
+}
+
+
+.label    {
+        background-color: #E8A37C;
+        padding: 0.5rem 0.75rem;
+        border-radius: 2em;
+        width: fit-content;
+    }
+
+@media only screen and (max-width: 1024px) {
+    .result {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .result {
+        width: 85%;
+        font-size: 90%;
+    }
+}

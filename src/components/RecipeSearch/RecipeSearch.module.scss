@@ -1,0 +1,73 @@
+//VARIABLES
+$color1: #4593CF;
+
+
+.search {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 200%;
+
+    input {
+        border: none;
+        border-bottom: 2px solid black;
+        width: 80%;
+        font-size: 150%;
+        text-align: center;
+        margin-bottom: 1rem;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+button {
+    padding: 1rem 1.5rem;
+    background-color: $color1;
+    width: 30%;
+    border-radius: 2em;
+    margin: 0 auto;
+    font-size: 50%;
+    cursor: pointer;
+
+    &:hover {
+        background-color: complement($color1);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.pagers {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+}
+
+.prev {
+    align-self: flex-start
+}
+
+.next {
+    align-self: flex-end;
+}
+
+@media only screen and (max-width: 600px) {
+    button {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .search {
+        width: 80%;
+    }
+    
+    button {
+        width: 50%;
+    }
+}

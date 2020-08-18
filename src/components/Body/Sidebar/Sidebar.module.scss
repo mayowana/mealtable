@@ -1,0 +1,8 @@
+.filter {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainfilter {
+    @extend .filter;
+}

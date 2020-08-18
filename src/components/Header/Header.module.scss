@@ -1,0 +1,81 @@
+//VARIABLES
+
+$color1: #7cb9e8;
+$color2: #2052a1;
+$color3: #00ba73;
+$color4: #ba7900;
+$color5: #ba4a00;
+
+* {
+    font-family: 'Roboto';
+    color: black;
+}
+
+.header {
+    //height: 93vh;
+}
+
+.hero {
+    width: 80%;
+    margin: 0 auto;
+    background-color: $color1;
+    height: 70vh;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.herotext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    padding: 1.5rem;
+    font-size: 125%;
+}
+
+.works {
+    display: flex;
+    align-items: center;
+
+    p {
+        padding-right: 0.5rem;
+    }
+}
+
+.heroimg {
+    
+        height: 90%;
+        padding-top: 1rem;
+}
+
+@media only screen and (max-width: 1024px) {
+    .heroimg {
+        height: 50%;
+    }
+
+    .hero {
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        height: 80vh;
+    }
+
+    .herotext {
+        width: 75%;
+        font-size: 90%;
+        text-align: center;
+    }
+
+    .heroimg {
+        height: 40%;
+    }
+
+    .works {
+        justify-content: center;
+    }
+}

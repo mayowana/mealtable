@@ -1,0 +1,21 @@
+.dash {
+    display: flex;
+}
+
+.sidebar {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    background-color: #E8BE7C;
+    justify-content: flex-start;
+    height: 80vh;
+    text-align: center;
+
+    p:first-of-type {
+        margin-top: 2rem;
+    }
+}
+
+.mainbar {
+    width: 70%;
+}

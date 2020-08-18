@@ -1,0 +1,26 @@
+.navlist {
+    position: absolute;
+    padding-top: 1rem;
+    width: 100vw;
+    left: 0;
+    padding-left: 0;
+    z-index: 200;
+}
+
+a {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+li {
+    display: block;
+    padding: 1rem 0;
+    width: 100%;
+    background-color: #7CB9E8;
+    text-align: center;
+    border: 1px solid #E8BE7C;
+}
+
+}

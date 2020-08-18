@@ -1,0 +1,13 @@
+$modal: calc(100vh - 3.5rem);
+
+.backdrop {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.6);
+    top: 3.5rem;
+    left: 0;
+    height: $modal;
+    width: 100vw;
+    z-index: 1;
+    display: block;
+  }
+

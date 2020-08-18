@@ -1,0 +1,19 @@
+.navmenu {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .navmenu {
+        display: flex;
+    }
+
+    a {
+        list-style-type: none;
+        text-decoration: none;
+    }
+
+    li {
+        display: block;
+        padding: 1rem 0;
+    }
+}

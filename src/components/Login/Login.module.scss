@@ -1,0 +1,93 @@
+.login {
+    border: 2px solid #4593CF;
+    width: 30%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input[type=text],
+    input[type=email],
+    div {
+        padding: 0.8rem 1.5rem;
+        width: 60%;
+        margin: 1rem 0;
+        background-color: #eee;
+        border: none;
+
+        input[type=password],
+        input[type=text] {
+            width: 60%;
+            background-color: #eee;
+            border: none;
+            outline: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+
+    div {
+        display: flex;
+        justify-content: space-between;
+
+        &:focus-within {
+            outline: auto;
+        }
+    }
+}
+
+.eye {
+    display: inline;
+}
+
+.remember {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    width: 55%;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    font-size: 75%;
+
+}
+
+.signup {
+    width: 70%;
+    margin: 1rem 0;
+    padding: 0.7rem 0;
+    background-color: #4593cf;
+    border: none;
+    border-radius: 0;
+    color: white;
+    font-size: 80%;
+  }
+  
+  .disabled {
+    width: 70%;
+    margin: 1rem 0;
+    padding: 0.7rem 0;
+    background-color: #aaaaaa;
+    border: none;
+    border-radius: 0;
+    color: white;
+    font-size: 80%;
+    cursor: auto;
+  
+    &:hover {
+      background-color: #aaaaaa;
+    }
+  }
+
+
+  .error {
+    color: red;
+    text-align: center;
+    width: 80%;
+  }
+
+.forgot {
+    font-size: 80%;
+    color: #555;
+}

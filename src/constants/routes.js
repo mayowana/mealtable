@@ -1,0 +1,6 @@
+export const LANDING = '/'
+export const RECIPE_SEARCH = '/recipe-search'
+export const BUILD_TABLE = '/build-table'
+export const LOGIN = '/login'
+export const SIGNUP = '/signup'
+export const DASHBOARD = '/dashboard'

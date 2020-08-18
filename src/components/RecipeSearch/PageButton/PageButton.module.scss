@@ -1,0 +1,17 @@
+.pagers {
+    padding: 0.5rem 0.5rem;
+    color: white;
+    background-color: black;
+    width: 10%;
+    margin: 0;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+    .pagers {
+        width: 20%;
+    }
+}

@@ -1,0 +1,17 @@
+.footer {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    path {
+        color: black;
+    }
+}
+
+.icons {
+    padding-left: 1.5rem;
+    color: black;
+    box-sizing: unset;
+}
