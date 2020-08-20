@@ -2,7 +2,6 @@ import React from 'react'
 import {withFirebase} from '../../../firebase'
 import styles from './Logout.module.scss'
 import { useHistory } from "react-router";
-import * as ROUTES from "../../../constants/routes"; 
 
 const Logout =({firebase}) => {
 
@@ -13,7 +12,7 @@ const Logout =({firebase}) => {
         history.push("/");
     }
     
-    return ( <a onClick={logoutHandler} className={styles.button}>
+    return ( <a onClick={logoutHandler} className={styles.button} href="/">
         Logout
     </a>
 )};

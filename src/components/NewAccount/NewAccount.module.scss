@@ -42,8 +42,17 @@ input[type="password"].cpass {
   background-color: #4593cf;
   border: none;
   border-radius: 0;
-  color: white;
   font-size: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  fill: white;
+
+  p {
+    color: white;
+    font-size: 125%;
+  }
 }
 
 .disabled {
@@ -84,7 +93,7 @@ input[type="password"].cpass {
 }
 
 .googleicon {
-  color: white;
+  color: white !important;
 }
 
 .forgot {

@@ -33,6 +33,10 @@ class Firebase {
 
     doPasswordUpdate = password => this.auth.currentUser.updatePassword(password);
 
+    signInWithGoogle = () => {
+      this.auth.signInWithPopup( new this.auth.GoogleAuthProvider());
+    };
+
     user = uid => this.db.ref(`users/${uid}`);
  
   users = () => this.db.ref('users');

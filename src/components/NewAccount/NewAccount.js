@@ -4,6 +4,8 @@ import { withFirebase } from "../../firebase";
 import { withRouter } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 import { compose } from "recompose";
+import { FaGoogle } from 'react-icons/fa'
+import { IconContext } from "react-icons";
 
 const SignUpPage = () => (
   <div>
@@ -78,6 +80,13 @@ class NewAccountBase extends Component {
       <>
         <div className={styles.newaccount}>
           <p>Create your MealTable account</p>
+
+          <IconContext.Provider value={{ color: "white", size: "1.5rem"}}>
+          <div className={styles.signup} >
+            <FaGoogle />
+            <p>Sign up with Google</p>
+            </div>
+            </IconContext.Provider>
 
           <div>
             <p>- OR -</p>
