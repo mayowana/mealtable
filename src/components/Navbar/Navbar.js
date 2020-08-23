@@ -12,9 +12,6 @@ const Navbar = () => (
       }
     </AuthUserContext.Consumer>
 
-    <AuthUserContext.Consumer>
-      {authUser => console.log(authUser)}
-    </AuthUserContext.Consumer>
   </div>
 
 );

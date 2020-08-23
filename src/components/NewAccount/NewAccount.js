@@ -59,6 +59,12 @@ class NewAccountBase extends Component {
       });
   };
 
+  googleLogin = (evt) => {
+    evt.preventDefault();
+    this.props.firebase
+    .signInWithGoogle();
+  }
+
   render() {
     const {
       displayName,
@@ -82,7 +88,7 @@ class NewAccountBase extends Component {
           <p>Create your MealTable account</p>
 
           <IconContext.Provider value={{ color: "white", size: "1.5rem"}}>
-          <div className={styles.signup} >
+          <div className={styles.signup} onClick={this.googleLogin} >
             <FaGoogle />
             <p>Sign up with Google</p>
             </div>

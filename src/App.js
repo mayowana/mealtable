@@ -12,6 +12,7 @@ import RecipeSearch from "./components/RecipeSearch/RecipeSearch";
 import Dashboard from './components/Dashboard/Dashboard'
 import * as ROUTES from './constants/routes'
 import { withAuthentication } from './session/';
+import GuardedRoute from './constants/GuardedRoute'
 
 const App = () => (  
     <>
@@ -23,7 +24,7 @@ const App = () => (
             <Route path={ROUTES.RECIPE_SEARCH} exact component={RecipeSearch} />
             <Route path={ROUTES.LOGIN} exact component={Login} />
             <Route path={ROUTES.SIGNUP} exact component={NewAccount} />
-            <Route path={ROUTES.DASHBOARD} exact component={Dashboard} />
+            <GuardedRoute path={ROUTES.DASHBOARD} exact component={Dashboard} />
             <Footer />
           </div>
         </Router>

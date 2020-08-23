@@ -23,8 +23,10 @@ const AuthIn = () => (
             </li>
           </ul>
         </div>
+        <div className={styles.auth}>
     <Link to={ROUTES.DASHBOARD}> My Dashboard </Link>
     <Logout />
+    </div>
     </nav>
     </>
 )

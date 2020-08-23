@@ -10,6 +10,7 @@ nav {
   .navmenu {
     display: flex;
     list-style: none;
+    color: black;
   
     li {
       padding: 0 1.5rem;
@@ -17,6 +18,26 @@ nav {
   
     a {
       text-decoration: none;
+      color: black;
+    }
+  }
+
+  .auth {
+    display: flex;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      padding: 0 1.5rem;
+      color: black;
+    }
+  
+    a:last-child {
+      color: white;
+      background-color: black;
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+      border-radius: 2em;
     }
   }
 

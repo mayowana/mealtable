@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Login.module.scss";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { withFirebase } from '../../firebase';

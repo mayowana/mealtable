@@ -10,6 +10,7 @@ nav {
 .navmenu {
   display: flex;
   list-style: none;
+  color: black;
 
   li {
     padding: 0 1.5rem;
@@ -17,6 +18,7 @@ nav {
 
   a {
     text-decoration: none;
+    color: black;
   }
 }
 
@@ -28,6 +30,7 @@ nav {
     a {
       text-decoration: none;
       padding: 0 1.5rem;
+      color: black;
     }
   
     a:last-child {

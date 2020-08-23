@@ -1,18 +1,35 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from "react";
+import firebase from "firebase/app";
+import styles from "./MyProfile.module.scss";
 
 const MyProfile = () => {
-    const userInfo = useSelector((state) => state.userReducer);
-    
-    return (
+  return (
     <>
-        <img src={userInfo.photoURL}></img>
-        <label>Full Name</label>
-        <input type="text" value={userInfo.displayName}></input>
+      <div className={styles.profile}>
+        <img
+          src={firebase.auth().currentUser.photoURL}
+          className={styles.avatar}
+          alt="Profile Photo"
+        ></img>
 
-        <label>Full Name</label>
-        <input type="email" value={userInfo.email}></input>
+        <div className={styles.label}>
+          <label>Full Name</label>
+          <input
+            type="text"
+            defaultValue={firebase.auth().currentUser.displayName}
+          ></input>
+        </div>
+
+        <div className={styles.label}>
+          <label>E-Mail</label>
+          <input
+            type="email"
+            defaultValue={firebase.auth().currentUser.email}
+          ></input>
+        </div>
+      </div>
     </>
-)};
+  );
+};
 
 export default MyProfile;
