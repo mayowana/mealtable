@@ -20,7 +20,7 @@ class Firebase {
 
       this.auth = app.auth();
       this.db = app.database();
-      this.firestore = app.firestore();
+      this.firestore = app.firestore().settings( {timestampsInSnapshots: true});
 
     }
 
@@ -38,6 +38,10 @@ class Firebase {
     provider = new app.auth.GoogleAuthProvider();
 
     signInWithGoogle = () => {this.auth.signInWithPopup(this.provider)};
+
+    addProfile = ({}) => this.firestore.collection("users").add({}).then(function(docRef) {
+      console.log("Document written with ID: ", docRef.id);
+  })
 
   }
    

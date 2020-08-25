@@ -6,6 +6,7 @@ import * as ROUTES from "../../constants/routes";
 import { compose } from "recompose";
 import { FaGoogle } from 'react-icons/fa'
 import { IconContext } from "react-icons";
+import Firebase from '../../firebase'
 
 const SignUpPage = () => (
   <div>
@@ -38,18 +39,10 @@ class NewAccountBase extends Component {
   handleSubmit = (evt) => {
     evt.preventDefault();
     const { displayName, email, phoneNumber, password } = this.state;
+    const db = this.props.firebase.firestore;
 
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, password)
-      .then(authUser => {
-        return this.props.firebase
-          .user(authUser.user.uid)
-          .set({
-            displayName,
-            phoneNumber,
-            email,
-          });
-      })
       .then((authUser) => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.DASHBOARD);

@@ -1,13 +1,17 @@
 import React from "react";
 import firebase from "firebase/app";
+import firestore from 'firebase/firestore'
 import styles from "./MyProfile.module.scss";
 
 const MyProfile = () => {
+
+    const user = firebase.auth().currentUser;
+    
   return (
     <>
       <div className={styles.profile}>
         <img
-          src={firebase.auth().currentUser.photoURL}
+          src={user.photoURL}
           className={styles.avatar}
           alt="Profile Photo"
         ></img>
@@ -16,7 +20,7 @@ const MyProfile = () => {
           <label>Full Name</label>
           <input
             type="text"
-            defaultValue={firebase.auth().currentUser.displayName}
+            defaultValue={user.displayName}
           ></input>
         </div>
 
@@ -24,7 +28,7 @@ const MyProfile = () => {
           <label>E-Mail</label>
           <input
             type="email"
-            defaultValue={firebase.auth().currentUser.email}
+            defaultValue={user.email}
           ></input>
         </div>
       </div>
