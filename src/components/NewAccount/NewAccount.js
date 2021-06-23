@@ -1,81 +1,29 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import styles from "./NewAccount.module.scss";
-import { withFirebase } from "../../firebase";
-import { withRouter } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 import { compose } from "recompose";
 import { FaGoogle } from 'react-icons/fa'
 import { IconContext } from "react-icons";
-import Firebase from '../../firebase'
+   
+const NewAccount = () => {
+  
+  const [state, setState ]= useState({
+    displayName: "",
+    email: "",
+    phoneNumber: "",
+    password: "",
+    cpass: "",
+    error: null,
+  });
 
-const SignUpPage = () => (
-  <div>
-    <NewAccount />
-  </div>
-);
+  const isInvalid =
+      state.displayName === "" ||
+      state.email === "" ||
+      state.phoneNumber === "" ||
+      state.password === "" ||
+      state.password !== state.cpass;
 
-const INITIAL_STATE = {
-  displayName: "",
-  email: "",
-  phoneNumber: "",
-  password: "",
-  cpass: "",
-  error: null,
-};
-
-class NewAccountBase extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { ...INITIAL_STATE };
-  }
-
-  handleChange = (evt) => {
-    this.setState({
-      [evt.target.id]: evt.target.value,
-    });
-  };
-
-  handleSubmit = (evt) => {
-    evt.preventDefault();
-    const { displayName, email, phoneNumber, password } = this.state;
-    const db = this.props.firebase.firestore;
-
-    this.props.firebase
-      .doCreateUserWithEmailAndPassword(email, password)
-      .then((authUser) => {
-        this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.DASHBOARD);
-      })
-      .catch((error) => {
-        this.setState({ error });
-      });
-  };
-
-  googleLogin = (evt) => {
-    evt.preventDefault();
-    this.props.firebase
-    .signInWithGoogle();
-  }
-
-  render() {
-    const {
-      displayName,
-      email,
-      phoneNumber,
-      password,
-      cpass,
-      error,
-    } = this.state;
-
-    const isInvalid =
-      displayName === "" ||
-      email === "" ||
-      phoneNumber === "" ||
-      password === "" ||
-      password !== cpass;
-
-    return (
+  return (
       <>
         <div className={styles.newaccount}>
           <p>Create your MealTable account</p>
@@ -96,7 +44,7 @@ class NewAccountBase extends Component {
               placeholder="Full name"
               required
               id="displayName"
-              value={displayName}
+              value={state.displayName}
               onChange={this.handleChange}
             ></input>
             <input
@@ -104,7 +52,7 @@ class NewAccountBase extends Component {
               placeholder="Email address"
               required
               id="email"
-              value={email}
+              value={state.email}
               onChange={this.handleChange}
             ></input>
             <input
@@ -112,7 +60,7 @@ class NewAccountBase extends Component {
               placeholder="Phone number"
               required
               id="phoneNumber"
-              value={phoneNumber}
+              value={state.phoneNumber}
               onChange={this.handleChange}
             ></input>
             <input
@@ -120,10 +68,10 @@ class NewAccountBase extends Component {
               placeholder="Password"
               required
               id="password"
-              value={password}
+              value={state.password}
               onChange={this.handleChange}
             ></input>
-            {cpass !== "" && cpass !== password ? (
+            {state.cpass !== "" && state.cpass !== state.password ? (
               <label className={styles.warn}>Passwords don't match</label>
             ) : (
               <label className={styles.hide}>HIDE</label>
@@ -133,12 +81,12 @@ class NewAccountBase extends Component {
               placeholder="Confirm Password"
               required
               id="cpass"
-              value={cpass}
+              value={state.cpass}
               onChange={this.handleChange}
               className={styles.cpass}
             ></input>
 
-            {error && <p className={styles.error}>{error.message}</p>}
+            {state.error && <p className={styles.error}>{state.error.message}</p>}
 
             <button
               className={!isInvalid ? styles.signup : styles.disabled}
@@ -153,12 +101,7 @@ class NewAccountBase extends Component {
           <p>Forgot your password?</p>
         </div>
       </>
-    );
-  }
-}
+    )};
 
-const NewAccount = compose(withRouter, withFirebase)(NewAccountBase);
 
-export default SignUpPage;
-
-export { NewAccount };
+export default NewAccount;

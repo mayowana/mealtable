@@ -1,21 +1,14 @@
-import React, {Component} from 'react'
+import React, {Component, useState} from 'react'
 import styles from './Dashboard.module.scss'
 import MyProfile from './MyProfile/MyProfile'
-import {withFirebase} from '../../firebase'
 
-class Dashboard extends Component {
-    constructor(props) {
-        super(props);
+const Dashboard = () => {
      
-        this.state = {
+    const [state, setState] = useState({
           loading: false,
           users: [],
-        };
+        });
 
-    }
-    
-
-    render() {
     return( <>
     <div className={styles.dash}>
         <div className={styles.sidebar}>
@@ -29,8 +22,7 @@ class Dashboard extends Component {
         </div>
     </div>
     </>
-);
-}
-}
+    )
+};
 
-export default withFirebase(Dashboard);
+export default Dashboard;

@@ -8,7 +8,7 @@ const Header = () => (
     <div className={styles.header}>
       <div className={styles.hero}>
         <div className={styles.herotext}>
-          <h1>Create your custom meal timetable</h1>
+          <h1>Find Recipes. Shop Instantly.</h1>
           <p>
             Combine different food items, compare nutritional information and
             more to make a meal table perfect for you.
