@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Login.module.scss";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import * as ROUTES from '../../constants/routes'
-import { compose } from 'recompose';
 
 const SignInPage = () => {
 
@@ -21,6 +19,7 @@ const [state, setState] = useState({
           type="email"
           placeholder="Email address"
           id="email"
+          onChange={(e) => {setState(e.target.value)}}
         ></input>
         <div>
           <input

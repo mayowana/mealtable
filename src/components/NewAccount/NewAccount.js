@@ -1,7 +1,5 @@
-import React, { Component, useState } from "react";
+import React, {useState } from "react";
 import styles from "./NewAccount.module.scss";
-import * as ROUTES from "../../constants/routes";
-import { compose } from "recompose";
 import { FaGoogle } from 'react-icons/fa'
 import { IconContext } from "react-icons";
    
@@ -45,7 +43,7 @@ const NewAccount = () => {
               required
               id="displayName"
               value={state.displayName}
-              onChange={this.handleChange}
+              onChange={(e) => {setState(e.target.value)}}
             ></input>
             <input
               type="email"

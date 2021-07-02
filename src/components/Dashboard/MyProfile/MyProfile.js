@@ -1,6 +1,5 @@
 import React from "react";
 import firebase from "firebase/app";
-import firestore from 'firebase/firestore'
 import styles from "./MyProfile.module.scss";
 
 const MyProfile = () => {
@@ -13,7 +12,7 @@ const MyProfile = () => {
         <img
           src={user.photoURL}
           className={styles.avatar}
-          alt="Profile Photo"
+          alt="Profile"
         ></img>
 
         <div className={styles.label}>

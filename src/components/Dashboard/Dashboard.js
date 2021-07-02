@@ -1,14 +1,9 @@
-import React, {Component, useState} from 'react'
+import React from 'react'
 import styles from './Dashboard.module.scss'
 import MyProfile from './MyProfile/MyProfile'
 
 const Dashboard = () => {
      
-    const [state, setState] = useState({
-          loading: false,
-          users: [],
-        });
-
     return( <>
     <div className={styles.dash}>
         <div className={styles.sidebar}>
